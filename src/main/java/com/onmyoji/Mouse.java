@@ -3,7 +3,10 @@ package com.onmyoji;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * @author zhutongtong
@@ -12,6 +15,7 @@ import java.io.File;
 public class Mouse {
 
     public static void main(String[] args) {
+//        fileReader();
         mouse();
     }
 
@@ -25,12 +29,27 @@ public class Mouse {
 //                robot.mousePress(InputEvent.BUTTON1_MASK);
                 robot.delay(1000);
                 captureScreen(String.format("C:\\Users\\EDY\\Desktop\\test\\%s.png",i));
-//                robot.mouseMove(100, 200);
+                //测 4 119 36 134 0
+                robot.mouseMove(62, 67);
 //                robot.mouseRelease(InputEvent.BUTTON1_MASK);
                 ++i;
             }
         } catch (AWTException e) {
             e.printStackTrace();
+        }
+    }
+
+
+    //left, top, right, bottom;
+    public static void fileReader()  {
+        try {
+            BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\EDY\\Desktop\\test\\Snipaste_2022-06-28_17-20-47.box"));
+            String str;
+            while ((str = in.readLine()) != null) {
+                System.out.println(str);
+            }
+            System.out.println(str);
+        } catch (IOException e) {
         }
     }
 

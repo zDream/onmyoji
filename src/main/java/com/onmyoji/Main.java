@@ -20,9 +20,11 @@ public class Main {
         File sourceFile = new File(sourceFileName);
         List<String> cmd = new ArrayList<String>();
         String ocr_result_filename = sourceFile.getName().substring(0, sourceFile.getName().lastIndexOf("."));
+        String path = savePath + File.separatorChar + ocr_result_filename;
+        System.out.println("path="+path);
         cmd.add(pb.directory().getAbsolutePath() + File.separatorChar + "tesseract");
         cmd.add(sourceFile.getAbsolutePath());
-        cmd.add(savePath + File.separatorChar + ocr_result_filename);
+        cmd.add(path);
         cmd.add("-l");
         cmd.add(language);
         cmd.add(dx);
@@ -40,6 +42,8 @@ public class Main {
         return null;
     }
 
+    //tesseract C:\Users\EDY\Desktop\test\Snipaste_2022-06-28_17-20-47.png stdout -l chi_sim output makebox
+    //识别命令
     public static void main(String[] arags) {
         String resultFile = Main.identifyTextFromPicture("C:/Program Files/Tesseract-OCR"
                 , "C:\\Users\\EDY\\Desktop\\test\\Snipaste_2022-06-28_17-20-47.png", "C:\\Users\\EDY\\Desktop\\test", "chi_sim","makebox");
