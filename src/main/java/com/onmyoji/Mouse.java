@@ -25,12 +25,12 @@ public class Mouse {
             String basePath = "C:\\Users\\EDY\\Desktop\\";
             while (i < 100000) {
                 Robot robot = new Robot();
-                robot.delay(1000);
+                robot.delay(3000);
 //                robot.mousePress(InputEvent.BUTTON1_MASK);
                 robot.delay(1000);
-                captureScreen(String.format("C:\\Users\\EDY\\Desktop\\test\\%s.png",i));
+//                captureScreen(String.format("C:\\Users\\EDY\\Desktop\\test\\%s.png",i));
                 //测 4 119 36 134 0
-                robot.mouseMove(62, 67);
+                robot.mouseMove(1882, 667);
 //                robot.mouseRelease(InputEvent.BUTTON1_MASK);
                 ++i;
             }
