@@ -2,6 +2,7 @@ package com.onmyoji;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.InputEvent;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,10 +29,13 @@ public class Mouse {
                 robot.delay(3000);
 //                robot.mousePress(InputEvent.BUTTON1_MASK);
                 robot.delay(1000);
-//                captureScreen(String.format("C:\\Users\\EDY\\Desktop\\test\\%s.png",i));
+                captureScreen(String.format("C:\\Users\\EDY\\Desktop\\test\\%s.png",i));
                 //测 4 119 36 134 0
                 robot.mouseMove(1882, 667);
-//                robot.mouseRelease(InputEvent.BUTTON1_MASK);
+
+                //按下鼠标左键
+                robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
                 ++i;
             }
         } catch (AWTException e) {
